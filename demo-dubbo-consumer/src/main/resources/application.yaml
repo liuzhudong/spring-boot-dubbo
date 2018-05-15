@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: demo-dubbo-consumer
+server:
+  port: 8089
+
+spring.dubbo:
+  server: false
+  application:
+    name: dubbo-consumer
+    owner: jelly
+    organization: free
+  registry:
+    client: zkclient
+    protocol: zookeeper
+    address: zk.jelly.com:2181
+  protocol:
+    name: dubbo
+    port: -1
+  consumer:
+    id: defaultServiceConsumer
+    isDefault: true
+    check: false
+    retries: 0
+    timeout: 15000
+    group: jelly_group_dev
+    version: 1.0
